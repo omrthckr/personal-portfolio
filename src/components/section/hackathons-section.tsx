@@ -26,7 +26,7 @@ export default function HackathonsSection() {
           </div>
         </div>
         <Timeline>
-          {DATA.hackathons.map((link, idx) => (
+          {DATA.hackathons.map((hackathon: any, idx: number) => (
             <TimelineItem key={hackathon.title + hackathon.dates} className="w-full flex items-start justify-between gap-10">
               <TimelineConnectItem className="flex items-start justify-center">
                 {hackathon.image ? (
@@ -56,10 +56,10 @@ export default function HackathonsSection() {
                 )}
                 {hackathon.links && hackathon.links.length > 0 && (
                   <div className="mt-1 flex flex-row flex-wrap items-start gap-2">
-                    {hackathon.links.map((link: any, idx: any) => (
+                    {hackathon.links.map((link: any, linkIdx: any) => (
                       <Link
                         href={link.href}
-                        key={idx}
+                        key={linkIdx}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
